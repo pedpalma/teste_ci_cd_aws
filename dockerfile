@@ -1,7 +1,7 @@
 FROM python:3.11-slim
 WORKDIR /app
 RUN pip install --upgrade pip
-COPY requiriments.txt
+COPY requiriments.txt .
 RUN pip install -r requiriments.txt
 COPY app/ ./app/
 
