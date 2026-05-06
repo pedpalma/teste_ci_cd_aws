@@ -1,8 +1,8 @@
 FROM python:3.11-slim
 WORKDIR /app
 RUN pip install --upgrade pip
-COPY requiriments.txt .
-RUN pip install -r requiriments.txt
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 COPY app/ ./app/
 
 # Criar user
