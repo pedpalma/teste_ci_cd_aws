@@ -45,4 +45,6 @@ jobs:
         uses: docker/build-push-action@v7.1.0
         with:
           push: true
-          tags: # optional
+          tags: |            
+            pedpalma/senai_ci_cd_aws:latest
+            pedpalma/senai_ci_cd_aws:${{github.sha}}
