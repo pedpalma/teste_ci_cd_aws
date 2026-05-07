@@ -62,7 +62,7 @@ jobs:
 
              host: ${{secrets.EC2_HOST}}
              username: ${{secrets.EC2_USER}}
-             key: ${{secrets.KEY}}
+             key: ${{secrets.EC2_KEY}}
              script: |
                 sudo docker pull pedpalma/senai_ci_cd_aws:latest
 
