@@ -63,5 +63,13 @@ jobs:
              username: ${{secrets.EC2_USER}}
              key: ${{secrets.EC2_KEY}}
              script: |
-                
+                sudo docker pull pedpalma/senai_ci_cd_aws:latest
+
+                sudo docker stop senai_ci_cd_aws 2>/dev/null || true
+                sudo docker rm senai_ci_cd_aws 2>/dev/null || true
+
+                sudo docker run --name senai_ci_cd_aws -d --restart unless-stopped -p 80:8080 pedpalma/senai_ci_cd_aws:latest
+
+                sleep 5
+                curl -f http://localhost/health || exit 1
                 echo "Deploy feito com sucesso"
